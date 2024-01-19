@@ -13,17 +13,19 @@ import sys
 # The function accepts LONG_INTEGER n as parameter.
 #
 
+
 def flippingBits(n):
     # Write your code here
-    print(f'bin(n): {bin(n)}')
+    print(f"bin(n): {bin(n)}")
     s = bin(n)[2:]
     t = s.maketrans("01", "10")
     s = s.translate(t)
-    s = (32-len(s))*"1"+s
+    s = (32 - len(s)) * "1" + s
     return int(s, 2)
 
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+if __name__ == "__main__":
+    fptr = open(os.environ["OUTPUT_PATH"], "w")
 
     q = int(input().strip())
 
@@ -32,6 +34,6 @@ if __name__ == '__main__':
 
         result = flippingBits(n)
 
-        fptr.write(str(result) + '\n')
+        fptr.write(str(result) + "\n")
 
     fptr.close()
